@@ -1,64 +1,50 @@
-# AIDO-AIT 1.0 — Minimal Public MVP
+## Rights, access and development boundary
 
-This repository is the **minimum public reference implementation** accompanying
-the AIDO-AIT 1.0 manuscript.
+This repository contains the **Minimal Public MVP** accompanying the AIDO-AIT 1.0 manuscript.
 
-It is intentionally smaller than the private development system and smaller
-than the controlled reviewer-verification package.
+It is provided for scientific inspection, reproducibility, methodological evaluation, and peer review. This repository is intentionally limited to the minimum reference implementation required to demonstrate the published AIDO-AIT 1.0 audit lifecycle.
 
-## Public purpose
+### Public scope
 
-This package exists to demonstrate the published governance mechanics:
+The public repository includes only the components necessary to demonstrate:
 
-- evidence-linked findings;
-- process-separated challenge;
+- evidence-linked audit findings;
+- process-separated Challenger review;
 - explicit Human Gate authority;
 - authorized repair;
 - post-repair regression;
 - versioned Final Lock;
-- REOPEN without deletion of earlier lock history.
+- REOPEN while preserving prior audit history;
+- public-safe calibration summaries and provenance records.
 
-Run:
+### Not included
 
-```bash
-python -m pytest -q
-```
+This repository is **not** the complete AIDO-AIT development or product codebase.
 
-The public reference tests are **demonstration/regression tests for this minimal
-reference implementation**. They are not the manuscript's historical 49-test
-suite and are not system-level performance estimates.
+The following remain outside the public repository:
 
-## Historical evaluated implementation
-
-The manuscript's historical evaluated AIT release is v5.8.1, SHA-256:
-
-`3054301dea44a33b7b028f58effebf4daa6b853c40f25bf60ca7f40990bd8795`
-
-Its preserved release record is **49 passed**. The exact full historical package
-is intentionally not included in this public tier; it is retained in the
-controlled reviewer-verification package.
-
-## What is intentionally not public
-
-This repository does not include:
-
-- later AIT laboratory/development branches;
-- AIT 2.0 extensions;
-- AIT-R, AIT-I or AIT-JF;
-- private rule libraries or advanced orchestration;
-- internal experience ledgers;
+- later AIDO-AIT development branches;
+- advanced audit rules and rule libraries;
+- internal orchestration logic;
+- experience and development ledgers;
 - unpublished audit cases;
-- private AIT1/AIT2 development archives;
-- copyrighted source papers or third-party attachments;
-- controlled reviewer evidence packages.
+- private calibration archives;
+- AIT-R, AIT-I and AIT-JF;
+- future AIDO-AIT 2.0 functionality;
+- commercial or product-integration components.
 
-This repository is a scientific reference implementation, not the complete
-development or product codebase.
+The exact historical implementation used for deeper manuscript verification is maintained separately under controlled access and is not part of this public Minimal MVP.
 
-## Licensing status
+### Rights and licensing
 
-No public software license has yet been selected. See `LICENSE_PENDING.md`.
-Do not interpret public visibility as an open-source license grant.
+Copyright © 2026 Sin Guan Kong. All rights reserved.
 
-Research collaboration, institutional evaluation, licensing and
-technology-transfer enquiries are welcome.
+No open-source software license is granted at the current submission stage.
+
+Except for rights necessarily provided through GitHub's Terms of Service and rights available under applicable law, no additional permission is granted to copy, redistribute, sublicense, commercialize, or create derivative software from this repository without permission from the copyright holder.
+
+See [`RIGHTS_AND_ACCESS_NOTICE.md`](RIGHTS_AND_ACCESS_NOTICE.md) for the current repository access boundary.
+
+### Contact
+
+Research collaboration, institutional evaluation, licensing, and technology-transfer enquiries are welcome.
