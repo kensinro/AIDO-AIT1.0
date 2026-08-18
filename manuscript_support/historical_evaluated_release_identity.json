@@ -1,0 +1,10 @@
+{
+  "artifact_role": "HISTORICAL_EVALUATED_IMPLEMENTATION",
+  "product": "AIDO-AIT 1.0 MVP",
+  "version": "5.8.1",
+  "archive_name": "AIDO_AIT1.0MVP_V5_8_1_HYGIENE_FP_FIXED.zip",
+  "sha256": "3054301dea44a33b7b028f58effebf4daa6b853c40f25bf60ca7f40990bd8795",
+  "historical_test_result": "49 passed",
+  "public_tier_policy": "Exact full historical source archive is not included in the public tier. It is retained in the controlled reviewer package.",
+  "claim_boundary": "The historical evaluated implementation supports release-governance and recursive-audit evidence; it was not the uniform runtime for all 15 cases."
+}

@@ -1,0 +1,14 @@
+{
+  "audit_id": "EXAMPLE_AUDIT",
+  "purpose": "Synthetic demonstration only",
+  "flow": [
+    "evidence link",
+    "process-separated challenge",
+    "Human Gate",
+    "authorized repair if needed",
+    "regression",
+    "Human Final Lock",
+    "REOPEN on material new evidence"
+  ],
+  "scientific_boundary": "Synthetic example; no scientific performance claim."
+}

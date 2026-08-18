@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "If you use this reference implementation, please cite the associated AIDO-AIT 1.0 manuscript."
+title: "AIDO-AIT 1.0 Minimal Public MVP"
+type: software
+authors:
+  - family-names: "Kong"
+    given-names: "Sin Guan"
+version: "1.0-public-mvp"
