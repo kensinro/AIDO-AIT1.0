@@ -4,6 +4,72 @@ This repository provides the **minimal public reference implementation of AIDO-A
 
 The repository is intended to support scientific inspection and reproducibility of the accompanying manuscript. It does **not** represent the complete AIDO-AIT development or product codebase.
 
+## Public purpose
+
+This package demonstrates the manuscript-level governance mechanics:
+
+- evidence-linked audit findings;
+- process-separated Challenger review;
+- explicit Human Gate authority;
+- authorized repair;
+- post-repair regression;
+- versioned Final Lock;
+- REOPEN while preserving prior audit history.
+
+## Repository structure
+
+- `reference_mvp/` — minimal public reference implementation;
+- `tests/` — regression tests for the public reference lifecycle;
+- `examples/` — synthetic example audit record;
+- `manuscript_support/` — public-safe calibration and provenance summaries;
+- `REPRODUCE.md` — minimal reproduction instructions;
+- `PUBLIC_DISCLOSURE_BOUNDARY.md` — disclosure boundary for the public tier;
+- `RIGHTS_AND_ACCESS_NOTICE.md` — current rights and access notice;
+- `SHA256_MANIFEST.csv` — file-level integrity manifest.
+
+## Reproduce the Minimal Public MVP
+
+Install the minimal dependency and run the public tests:
+
+```bash
+python -m pip install -r requirements.txt
+python -m pytest -q
+```
+
+Expected result:
+
+```text
+8 passed
+```
+
+These tests verify the **Minimal Public MVP lifecycle only**. They do not replace the historical 49-test evaluated-release evidence described in the manuscript.
+
+## Historical evaluated implementation
+
+The manuscript's historical evaluated AIDO-AIT 1.0 MVP release is **v5.8.1**.
+
+Its version-locked SHA-256 is:
+
+```text
+3054301dea44a33b7b028f58effebf4daa6b853c40f25bf60ca7f40990bd8795
+```
+
+The preserved release-level regression result is:
+
+```text
+49 passed
+```
+
+The exact historical source archive is **not included in this public tier**. It is retained separately for controlled editor/reviewer verification.
+
+The historical evaluated implementation supports the recursive release-infrastructure evidence described in the manuscript; it should not be interpreted as the uniform runtime for all calibration cases.
+
+## Calibration scope
+
+The manuscript evaluates AIDO-AIT across **15 AIT-owned calibration cases** spanning internal end-to-end audits, published software-method audits, and heterogeneous non-software scientific objects.
+
+Only public-safe summaries and provenance records needed for manuscript inspection are included here. Private audit archives and copyrighted third-party source materials are not redistributed.
+
 ## Rights, access and development boundary
 
 This repository contains the **Minimal Public MVP** accompanying the AIDO-AIT 1.0 manuscript.
@@ -54,3 +120,7 @@ See [`RIGHTS_AND_ACCESS_NOTICE.md`](RIGHTS_AND_ACCESS_NOTICE.md) for the current
 ### Contact
 
 Research collaboration, institutional evaluation, licensing, and technology-transfer enquiries are welcome.
+
+## Citation
+
+Please cite the associated AIDO-AIT 1.0 manuscript when using or discussing this reference implementation. Machine-readable citation metadata are provided in `CITATION.cff`.
