@@ -1,3 +1,9 @@
+# AIDO-AIT 1.0 — Minimal Public MVP
+
+This repository provides the **minimal public reference implementation of AIDO-AIT 1.0**, a human-governed framework for traceable scientific audit, process-separated challenge, controlled repair, regression, and versioned closure.
+
+The repository is intended to support scientific inspection and reproducibility of the accompanying manuscript. It does **not** represent the complete AIDO-AIT development or product codebase.
+
 ## Rights, access and development boundary
 
 This repository contains the **Minimal Public MVP** accompanying the AIDO-AIT 1.0 manuscript.
