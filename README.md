@@ -1,19 +1,25 @@
 # AIDO-AIT 1.0 — Minimal Public MVP
 
-This repository provides the **minimal public reference implementation of AIDO-AIT 1.0**, a human-governed framework for traceable scientific audit, process-separated challenge, controlled repair, regression, and versioned closure.
+This repository provides the **minimal public reference implementation of AIDO-AIT 1.0**, a human-governed framework for traceable scientific audit, process-separated challenge, controlled repair, regression, and versioned **audit-run closure**.
 
 The repository is intended to support scientific inspection and reproducibility of the accompanying manuscript. It does **not** represent the complete AIDO-AIT development or product codebase.
 
+## Authority boundary
+
+AIT audits scientific claims and evidence. The public lifecycle demonstrated here ends in an **audit-run lock**: a versioned record of the audited evidence state, findings, human adjudication, and closure metadata.
+
+**The audit-run lock is not manuscript Final Lock.** Manuscript Final Lock, publication acceptance, and other downstream scientific or editorial decisions remain outside AIT authority.
+
 ## Public purpose
 
-This package demonstrates the manuscript-level governance mechanics:
+This package demonstrates the manuscript-level audit-governance mechanics:
 
 - evidence-linked audit findings;
 - process-separated Challenger review;
 - explicit Human Gate authority;
 - authorized repair;
 - post-repair regression;
-- versioned Final Lock;
+- versioned audit-run lock;
 - REOPEN while preserving prior audit history.
 
 ## Repository structure
@@ -42,11 +48,11 @@ Expected result:
 8 passed
 ```
 
-These tests verify the **Minimal Public MVP lifecycle only**. They do not replace the historical 49-test evaluated-release evidence described in the manuscript.
+These tests verify the **Minimal Public MVP audit-run lifecycle only**. They do not replace the historical 49-test evaluated-release evidence described in the manuscript.
 
 ## Historical evaluated implementation
 
-The manuscript's historical evaluated AIDO-AIT 1.0 MVP release is **v5.8.1**.
+The manuscript preserves a historical evaluated AIDO-AIT 1.0 MVP release, **v5.8.1**, as provenance for earlier release-governance and recursive-audit evidence.
 
 Its version-locked SHA-256 is:
 
@@ -62,11 +68,11 @@ The preserved release-level regression result is:
 
 The exact historical source archive is **not included in this public tier**. It is retained separately for controlled editor/reviewer verification.
 
-The historical evaluated implementation supports the recursive release-infrastructure evidence described in the manuscript; it should not be interpreted as the uniform runtime for all calibration cases.
+This historical release identifier is preserved as evidence lineage. It does not define the current manuscript authority model, and it should not be interpreted as the uniform runtime for all calibration cases.
 
 ## Calibration scope
 
-The manuscript evaluates AIDO-AIT across **15 AIT-owned calibration cases** spanning internal end-to-end audits, published software-method audits, and heterogeneous non-software scientific objects.
+The manuscript evaluates AIDO-AIT across heterogeneous calibration cases spanning internal end-to-end audits, published software-method audits, and non-software scientific objects.
 
 Only public-safe summaries and provenance records needed for manuscript inspection are included here. Private audit archives and copyrighted third-party source materials are not redistributed.
 
@@ -85,7 +91,7 @@ The public repository includes only the components necessary to demonstrate:
 - explicit Human Gate authority;
 - authorized repair;
 - post-repair regression;
-- versioned Final Lock;
+- versioned audit-run lock;
 - REOPEN while preserving prior audit history;
 - public-safe calibration summaries and provenance records.
 
@@ -101,8 +107,7 @@ The following remain outside the public repository:
 - experience and development ledgers;
 - unpublished audit cases;
 - private calibration archives;
-- AIT-R, AIT-I and AIT-JF;
-- future AIDO-AIT 2.0 functionality;
+- future research-lifecycle, impact-assessment, journal-strategy, domain-reasoning, and learning-based extensions;
 - commercial or product-integration components.
 
 The exact historical implementation used for deeper manuscript verification is maintained separately under controlled access and is not part of this public Minimal MVP.
