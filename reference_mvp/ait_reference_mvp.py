@@ -1,52 +1,37 @@
 """
 AIDO-AIT 1.0 — minimal public reference implementation.
 
-Purpose
--------
-This file demonstrates only the manuscript-level governance lifecycle:
+This file demonstrates only the audit-run governance lifecycle:
 evidence-linked findings, process-separated challenge, explicit Human Gate,
-authorized repair, regression, Final Lock and REOPEN.
+authorized repair, regression, audit-run lock, and REOPEN.
 
-It intentionally omits the private development rule libraries, domain adapters,
-advanced orchestration, experience ledgers and later AIT 2.0 functionality.
-
-This reference implementation is not the exact historical v5.8.1 evaluated
-release. The exact historical package identity is recorded separately and may
-be supplied through controlled reviewer verification.
+The audit-run lock freezes a defined AIT audit run and its evidence state.
+It does not grant manuscript Final Lock, publication acceptance, or other
+downstream scientific/editorial authority.
 """
-
 from __future__ import annotations
 from dataclasses import dataclass, field, asdict
 from enum import Enum
 from typing import List, Optional
-import hashlib
-import json
-
+import hashlib, json
 
 class State(str, Enum):
     OPEN = "OPEN"
     CHALLENGED = "CHALLENGED"
     REPAIR_REQUIRED = "REPAIR_REQUIRED"
     REGRESSION_REQUIRED = "REGRESSION_REQUIRED"
-    READY_FOR_LOCK = "READY_FOR_LOCK"
-    FINAL_LOCKED = "FINAL_LOCKED"
+    READY_FOR_AUDIT_RUN_LOCK = "READY_FOR_AUDIT_RUN_LOCK"
+    AUDIT_RUN_LOCKED = "AUDIT_RUN_LOCKED"
     REOPENED = "REOPENED"
-
 
 @dataclass
 class EvidenceLink:
     evidence_id: str
     sha256: str
     role: str
-
     @classmethod
     def from_bytes(cls, evidence_id: str, payload: bytes, role: str) -> "EvidenceLink":
-        return cls(
-            evidence_id=evidence_id,
-            sha256=hashlib.sha256(payload).hexdigest(),
-            role=role,
-        )
-
+        return cls(evidence_id, hashlib.sha256(payload).hexdigest(), role)
 
 @dataclass
 class Finding:
@@ -68,14 +53,13 @@ class Finding:
         self.state = State.CHALLENGED
 
     def human_gate(self, decision: str) -> None:
-        allowed = {"ACCEPT", "REJECT", "REPAIR", "DEFER"}
-        if decision not in allowed:
+        if decision not in {"ACCEPT", "REJECT", "REPAIR", "DEFER"}:
             raise ValueError(f"Unsupported Human Gate decision: {decision}")
         self.human_decision = decision
         if decision == "REPAIR":
             self.state = State.REPAIR_REQUIRED
         elif decision == "ACCEPT":
-            self.state = State.READY_FOR_LOCK
+            self.state = State.READY_FOR_AUDIT_RUN_LOCK
         else:
             self.state = State.OPEN
 
@@ -90,8 +74,7 @@ class Finding:
         if self.state != State.REGRESSION_REQUIRED:
             raise RuntimeError("Regression may only follow an authorized repair.")
         self.regression_passed = bool(passed)
-        self.state = State.READY_FOR_LOCK if passed else State.REPAIR_REQUIRED
-
+        self.state = State.READY_FOR_AUDIT_RUN_LOCK if passed else State.REPAIR_REQUIRED
 
 @dataclass
 class AuditRecord:
@@ -103,28 +86,24 @@ class AuditRecord:
     def add_finding(self, finding: Finding) -> None:
         self.findings.append(finding)
 
-    def final_lock(self, human_approval: bool, note: str = "") -> None:
+    def lock_audit_run(self, human_approval: bool, note: str = "") -> None:
         if not human_approval:
-            raise RuntimeError("Human approval is required for Final Lock.")
-        if any(f.state != State.READY_FOR_LOCK for f in self.findings):
-            raise RuntimeError("All findings must be ready before Final Lock.")
-        snapshot = {
+            raise RuntimeError("Human approval is required to lock the audit run.")
+        if any(f.state != State.READY_FOR_AUDIT_RUN_LOCK for f in self.findings):
+            raise RuntimeError("All findings must be ready before the audit run can be locked.")
+        self.lock_history.append({
             "audit_id": self.audit_id,
             "state_before_lock": self.state.value,
             "note": note,
             "findings": [asdict(f) for f in self.findings],
-        }
-        self.lock_history.append(snapshot)
-        self.state = State.FINAL_LOCKED
+            "authority_boundary": "Audit-run lock only; manuscript Final Lock and publication decisions remain outside AIT authority.",
+        })
+        self.state = State.AUDIT_RUN_LOCKED
 
     def reopen(self, reason: str) -> None:
-        if self.state != State.FINAL_LOCKED:
-            raise RuntimeError("Only a Final-Locked audit can be reopened.")
-        self.lock_history.append({
-            "audit_id": self.audit_id,
-            "event": "REOPEN",
-            "reason": reason,
-        })
+        if self.state != State.AUDIT_RUN_LOCKED:
+            raise RuntimeError("Only a locked audit run can be reopened.")
+        self.lock_history.append({"audit_id": self.audit_id, "event": "REOPEN", "reason": reason})
         self.state = State.REOPENED
 
     def to_json(self) -> str:
