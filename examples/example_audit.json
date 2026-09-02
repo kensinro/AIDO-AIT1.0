@@ -7,8 +7,9 @@
     "Human Gate",
     "authorized repair if needed",
     "regression",
-    "Human Final Lock",
+    "human-approved audit-run lock",
     "REOPEN on material new evidence"
   ],
+  "authority_boundary": "Audit-run lock only; manuscript Final Lock and publication decisions remain outside AIT authority.",
   "scientific_boundary": "Synthetic example; no scientific performance claim."
 }
