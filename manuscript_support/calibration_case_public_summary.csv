@@ -1,10 +1,10 @@
 Calibration,Scientific object,Audit problem,Representative result,Evidential boundary
 Internal major revision,Manuscript/revision package,"Claim, response and correction concordance",25 packets closed without full analytical rerun,Internal feasibility; not external validation
-Internal submission package,Submission/release package,"Certification, lineage and reopening",55 packets; Challenger-triggered REOPEN and superseding closure,Original state preserved
+Internal submission package,Submission/release package,"Certification, lineage and reopening",55 packets; Challenger-triggered REOPEN and superseding audit-run closure,Original state preserved
 GSEA,Executable method,Execution provenance and rerun reproducibility,"12/12 cells reproduced across 3,600 replicates",Reproducibility does not establish independent scientific correctness
 Pathifier,Executable method,Branch semantics and silent omission,normals=NULL changed reference contract; max PDS difference 0.6007,Bounded to tested branches and datasets
 PROGENy,Frozen model resource,Resource identity and training provenance,"1,013 supplied genes versus published 1,059",Application reproducibility does not reproduce historical training
-SPIA,Topology-conditioned method,Cancellation and numerical conditioning,t_A=0 while sum_i |Acc_i|=8,Human Final-Locked supporting-generator role only
+SPIA,Topology-conditioned method,Cancellation and numerical conditioning,t_A=0 while sum_i |Acc_i|=8,Human-adjudicated supporting-generator role only
 PARADIGM,Latent-state model,Incomplete implementation recovery,Scientific generator role retained under qualification,Exact historical reproduction unresolved
 Hallmarks review,Conceptual framework,"Taxonomy, universality and independence",High utility retained under bounded ontology reliability,Framework usefulness does not establish a complete ontology
 Precision-medicine case,Single-patient study,Chronology and prospective interpretation,Genomics followed treatment,Retrospective interpretation only
