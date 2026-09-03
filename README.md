@@ -10,6 +10,10 @@ AIT audits scientific claims and evidence. The public lifecycle demonstrated her
 
 **The audit-run lock is not manuscript Final Lock.** Manuscript Final Lock, publication acceptance, and other downstream scientific or editorial decisions remain outside AIT authority.
 
+## Scientific-state formalism boundary
+
+The manuscript may express scientific-state assignment, admissible state sets, and wording ceilings at a governance/formal decision level. The public reference MVP demonstrates only the bounded audit-run workflow needed for inspection of the reported lifecycle. It is **not** a generalized production scientific-state engine, and it does not claim uniform machine serialization of every governance-level scientific-state representation across the historical calibration programme.
+
 ## Public purpose
 
 This package demonstrates the manuscript-level audit-governance mechanics:
