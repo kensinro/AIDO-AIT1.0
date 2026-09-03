@@ -22,4 +22,4 @@
 - AIT 2.0 capabilities.
 
 The public tier is designed to prove existence and inspectability of the
-published MVP without transferring the complete development know-how.
+manuscript-described MVP without transferring the complete development know-how.

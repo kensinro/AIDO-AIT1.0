@@ -10,6 +10,10 @@ AIT audits scientific claims and evidence. The public lifecycle demonstrated her
 
 **The audit-run lock is not manuscript Final Lock.** Manuscript Final Lock, publication acceptance, and other downstream scientific or editorial decisions remain outside AIT authority.
 
+## Scientific-state formalism boundary
+
+The manuscript may express scientific-state assignment, admissible state sets, and wording ceilings at a governance/formal decision level. The public reference MVP demonstrates only the bounded audit-run workflow needed for inspection of the reported lifecycle. It is **not** a generalized production scientific-state engine, and it does not claim uniform machine serialization of every governance-level scientific-state representation across the historical calibration programme.
+
 ## Public purpose
 
 This package demonstrates the manuscript-level audit-governance mechanics:
@@ -80,7 +84,7 @@ Only public-safe summaries and provenance records needed for manuscript inspecti
 
 This repository contains the **Minimal Public MVP** accompanying the AIDO-AIT 1.0 manuscript.
 
-It is provided for scientific inspection, reproducibility, methodological evaluation, and peer review. This repository is intentionally limited to the minimum reference implementation required to demonstrate the published AIDO-AIT 1.0 audit lifecycle.
+It is provided for scientific inspection, reproducibility, methodological evaluation, and peer review. This repository is intentionally limited to the minimum reference implementation required to demonstrate the manuscript-described AIDO-AIT 1.0 audit lifecycle.
 
 ### Public scope
 
