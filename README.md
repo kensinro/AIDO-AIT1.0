@@ -84,7 +84,7 @@ Only public-safe summaries and provenance records needed for manuscript inspecti
 
 This repository contains the **Minimal Public MVP** accompanying the AIDO-AIT 1.0 manuscript.
 
-It is provided for scientific inspection, reproducibility, methodological evaluation, and peer review. This repository is intentionally limited to the minimum reference implementation required to demonstrate the published AIDO-AIT 1.0 audit lifecycle.
+It is provided for scientific inspection, reproducibility, methodological evaluation, and peer review. This repository is intentionally limited to the minimum reference implementation required to demonstrate the manuscript-described AIDO-AIT 1.0 audit lifecycle.
 
 ### Public scope
 
